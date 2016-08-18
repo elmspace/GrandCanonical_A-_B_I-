@@ -3,9 +3,9 @@
    The path for fftw libraries for the devices which this code will be used on is included
 */
 
-#include </usr/local/include/fftw3.h>                                // This is for My Mac Pro
+//#include </usr/local/include/fftw3.h>                                // This is for My Mac Pro
 //#include </opt/sharcnet/fftw/3.3.2/intel/include/fftw3.h>          // This is for Sharcnet
-//#include </usr/include/fftw3.h>                                    // This is for use on Landua
+#include </usr/include/fftw3.h>                                    // This is for use on Landua
 //#include </usr/local/include/fftw3.h>                              // This is for elmspace2
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -42,7 +42,7 @@ double NB = NA;
 double NI = 1;
 
 // Charge fraction value [0..1]
-double PA = 0.00000001;
+double PA = 0.00001;
 
 // Average phis
 double pAave = 0.5;
@@ -62,7 +62,7 @@ double muI = -100.0;
 double Phi_e_total;
 
 // Look at theory pdf for this
-double tau = 1.0; //Using T=300K, b=1nm, tau=600 almost exactly 
+double tau = 456.0; //Using T=300K, b=1nm, tau=700 almost exactly 
 
 // Dielectric constant
 double epsilon = 1.0;
