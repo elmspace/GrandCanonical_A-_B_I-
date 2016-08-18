@@ -29,65 +29,115 @@
 #define ChainType 3
 #define Pi 3.14159265358979262
 
-// Box minimization on/off
-int Box_min = 1;
+// Box minimization 1=on/0=off
+int Box_min = 0;
 
 // Print during run time
 int RunTimePrint= 1;
 
 // Setting Parameters
+// Degree of polymerization
 double NA = 1000;
 double NB = NA;
 double NI = 1;
-double PA = 0.01;
-double tau = 6; //Using T=300K, b=1nm, tau=600 almost exactly 
-double epsilon = 2.0;
-double xAB = 4.5;
+
+// Charge fraction value [0..1]
+double PA = 0.00000001;
+
+// Average phis
+double pAave = 0.5;
+double pBave = 0.5;
+double pIave = pAave*PA;
+
+// Relative chain length
+double kappaB = NB/NA;
+double kappaI = NI/NA;
+
+// Chemical potentials
+double muA = 0.0;
+double muB = 0.0;
+double muI = -100.0;
+
+// Total charge in system
+double Phi_e_total;
+
+// Look at theory pdf for this
+double tau = 1.0; //Using T=300K, b=1nm, tau=600 almost exactly 
+
+// Dielectric constant
+double epsilon = 1.0;
+
+// Flory-Higgins parameter
+double xAB = 10.0;
 double xAI = 0.0;
 double xBI = 0.0;
+
+// Box size
 double Lx = 4.0;
 double Ly = 4.0;
 double Lz = 4.0;
-double epsilon_w = 0.01;
-double epsilon_p = 0.01;
-double precision=1.0e-3; 
+
+// Mixing parameters
+double epsilon_w = 0.001;
+double epsilon_p = 0.001;
+
+// Calculation percision
+double precision=1.0e-5;
+
+// Box minimization step sizes
 double del_Box=0.1;
 
-double pAave = 0.3;
-double pIave = pAave*PA;
-double pBave = 1.0-pAave-pIave; //previously this was defined without -pIave 
-double ds = 1.0/NA; // Should really be defined 1.0/Ns, but as long as NA=NB it's fine
-double kappa = NB/NA;
+// Step size along contour of the chain
+double ds = 1.0/NA;
 
+// Auxiliary fields
 double ****w, ****phi;
 double ***w_e, ***phi_e;
 double ***eff_wA, ***eff_wI;
+
+// Electric potential
 double ***V;
+
+// Gradient of electric potential
 double ***Gradient_V_x;
 double ***Gradient_V_y;
 double ***Gradient_V_z;
+
+// Incomp Legrange parameter
 double ***eta;
+
+// Chanrge neutrality parameter
+double etaHat = 0.0;
+
+// Other parameters
 double *chi;
 double **chiMatrix;
 int *Ns;
 double ***k_vector;
 double *dxyz;
 double *Kx,*Ky,*Kz;
+
+// Used for convergance measuring
 double ***delphi;
 double ****delW;
 double ****newW;
+
+// Used for box minimization
 double *dxyz_temp;
 double *box_x,*box_y,*box_z;
 double *box_fE;
 double ****w_temp;
 
+// End-integrated propagators
 double ****qA;
 double ****qB;
 double ***qI;
 double ***qint;
 
+// Used in the Diffusion solver
 double ***wds, ***kds;
 
+// Action parameters
 int Iomega;
 int LAM, HEX, BCC;
 

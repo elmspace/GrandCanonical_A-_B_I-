@@ -14,26 +14,25 @@
 #include "./HEADER_FILES/Phi_B.hh"
 #include "./HEADER_FILES/Phi_I.hh"
 #include "./HEADER_FILES/Phi_e.hh"
-#include "./HEADER_FILES/Homogenous_Free_Energy.hh"
+//#include "./HEADER_FILES/Homogenous_Free_Energy.hh"                // For now, I will comment this out, need to write a Homogenous Free energy function for the Grand Theory
 #include "./HEADER_FILES/Incompressibility.hh"
 #include "./HEADER_FILES/Box_Minimization_Free_Energy.hh"
 #include "./HEADER_FILES/Box_Minimization.hh"
 #include "./HEADER_FILES/Gradient.hh"
 #include "./HEADER_FILES/Save_Data.hh"
+#include "./HEADER_FILES/ChargeNeutrality.hh"
+#include "./HEADER_FILES/TotalCharge.hh"
 #include "./HEADER_FILES/Free_Energy.hh"
 
 // The order of calculations are set in Mod files
 // You can also do this here, but I am trying to keep things clean here
-#include "./MODS/Mod0.hh"
 #include "./MODS/Mod1.hh"
 
 using namespace std;
 
 int main(){
   
-
-//	Mod0();
-	Mod1();
-
+  Mod1();
+  
   return 0;
 }

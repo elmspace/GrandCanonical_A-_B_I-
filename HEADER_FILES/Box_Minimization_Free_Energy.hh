@@ -13,7 +13,7 @@ double FreeEnergy_Box_Edition( ){
   QB=Phi_B(w_temp);
   QI=Phi_I(w_temp);
   
-  fES=pAave*log(QA)+(pBave*log(QB)/kappa)+(pIave*NA*log(QI));
+  fES=exp(muA)*QA + exp(kappaB*muB)*QB + exp(kappaI*muI)*QI;
   currentfE=-fES;
   
   return currentfE;

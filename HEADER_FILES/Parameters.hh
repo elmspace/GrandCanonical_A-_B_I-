@@ -40,14 +40,15 @@ void Parameters( ){
   chiMatrix[2][0]=chi[1];     // xAI
   chiMatrix[2][1]=chi[2];     // xBI
   chiMatrix[2][2]=0.0;     // xII
-
-	for(int i=0; i<Nx; i++){
-		for(int j=0; j<Ny;j++){
-			for(int k=0;k<Nz;k++){
-				phi[0][i][j][k]=pAave;
-				phi[1][i][j][k]=pBave;
-				phi[2][i][j][k]=pIave;
-			}
-		}
-	}
+  
+  for(int i=0; i<Nx; i++){
+    for(int j=0; j<Ny;j++){
+      for(int k=0;k<Nz;k++){
+	phi[0][i][j][k]=pAave;
+	phi[1][i][j][k]=pBave;
+	phi[2][i][j][k]=pIave;
+      }
+    }
+  }
+  
 }

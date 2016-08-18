@@ -41,7 +41,7 @@ double Phi_B(double ****W){
 					}
 				}
 
-				phi[1][i][j][l]*=(pBave/(Q*kappa));
+				phi[1][i][j][l]*=(exp(muB*kappaB)/kappaB);
 
 			}
 		}

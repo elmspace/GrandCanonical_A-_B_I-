@@ -10,7 +10,7 @@ double Phi_A(double ****W){
 		for(int j=0;j<Ny;j++){
 			for(int l=0;l<Nz;l++){
 				qint[i][j][l] = 1.0;
-				eff_wA[i][j][l] = W[0][i][j][l] + PA*w_e[i][j][l];
+				eff_wA[i][j][l] = W[0][i][j][l] - PA*w_e[i][j][l];
 			}
 		}
 	}
@@ -43,7 +43,7 @@ double Phi_A(double ****W){
 						phi[0][i][j][l]+=qA[i][j][l][s]*qA[i][j][l][Ns[0]-s]*ds;
 					}
 				}
-				phi[0][i][j][l]*=(pAave/Q);//is this activity in GGC?
+				phi[0][i][j][l]*=exp(muA);
 			}
 		}
 	}

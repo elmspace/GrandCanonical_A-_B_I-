@@ -31,7 +31,7 @@ double Phi_I(double ****W){
 		for(int j=0;j<Ny;j++){
 			for(int k=0;k<Nz;k++){
 
-				phi[2][i][j][k]=(pIave/Q)*qI[i][j][k];
+			  phi[2][i][j][k]=(exp(kappaI*muI)/kappaI)*qI[i][j][k];
 
 			}
 		}
