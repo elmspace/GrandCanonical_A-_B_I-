@@ -116,6 +116,7 @@ int *Ns;
 double ***k_vector;
 double *dxyz;
 double *Kx,*Ky,*Kz;
+double *phi_average;
 
 // Used for convergance measuring
 double ***delphi;

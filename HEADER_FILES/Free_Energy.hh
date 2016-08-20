@@ -100,23 +100,23 @@ void FreeEnergy( ){
       
       if(RunTimePrint==1){
 	// Output
-	std::cout<<iter<<"  fE: "<<currentfE<< "  dfE: " << deltafE <<"  dW: " << deltaW<<"  dPhi(Nx/2)(Ny/2)(Nz/2): "<<delphi[Nx/2][Ny/2][Nz/2]<<std::endl;
+	std::cout<<iter<<"  fE: "<<currentfE<< "  dfE: " << deltafE <<"  dW: " << deltaW<<"  dPhi(Nx/2)(Ny/2)(Nz/2): "<<delphi[Nx/2][Ny/2][Nz/2]<< " Phi A: " <<phi_average[0]<< " Phi B: " <<phi_average[1]<<" Phi I: " <<phi_average[2]<<std::endl;
       }      
       
       // Using simple mixing to update the omega fields
       for(int i=0;i<Nx;i++){
-	for(int j=0;j<Ny;j++){
-	  for(int k=0;k<Nz;k++){
-	    for(int chain=0;chain<ChainType;chain++){
-	      w[chain][i][j][k]+=(epsilon_w*delW[chain][i][j][k]-epsilon_p*delphi[i][j][k]);
-	    }
-	  }
-	}
+      	for(int j=0;j<Ny;j++){
+      	  for(int k=0;k<Nz;k++){
+      	    for(int chain=0;chain<ChainType;chain++){
+	            w[chain][i][j][k]+=(epsilon_w*delW[chain][i][j][k]-epsilon_p*delphi[i][j][k]);
+	          }
+      	  }
+	      }
       }
       
       // Save the data every _savefreq_ number of iteration
       if((iter%savefreq)==0){
-	saveData();
+      	saveData();
       }
       
       iter++;
@@ -132,10 +132,10 @@ void FreeEnergy( ){
       Box_Minimization( );
       
       if(oldfE<currentfE){
-	msg=0;
+      	msg=0;
       }
       if(msg==1){
-	oldfE=currentfE;
+      	oldfE=currentfE;
       }
     }else{
       msg=0;

@@ -23,6 +23,7 @@ void Allocate (int task){
     Kx=create_1d_double_array(Nx,"Kx");
     Ky=create_1d_double_array(Ny,"Ky");
     Kz=create_1d_double_array(Nz,"Kz");
+    phi_average=create_1d_double_array(ChainType,"phi_average");
     delW=create_4d_double_array(ChainType,Nx,Ny,Nz,"delW");
     delphi=create_3d_double_array(Nx,Ny,Nz,"delphi");
     newW=create_4d_double_array(ChainType,Nx,Ny,Nz,"newW");

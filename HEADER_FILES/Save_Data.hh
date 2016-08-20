@@ -77,4 +77,26 @@ void saveData( ){
   }
   outputFileyz.close();
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  // Writing to data files (All of the phi matrix)
+  std::ofstream outputFileAllPhi("./PHI/allphi.dat");
+  for(int i=0;i<Nx;i++){
+   for(int j=0;j<Ny;j++){
+    for(int k=0;k<Nz;k++){
+        outputFileAllPhi <<i<<" "<<j<<" "<<k<<" "<<phi[0][i][j][k]<<" "<<phi[1][i][j][k]<<" "<<phi[2][i][j][k]<<std::endl;
+      }
+    }
+  }
+  outputFileAllPhi.close();
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  // Writing to data files (All of the omega matrix)
+  std::ofstream outputFileOmega("./PHI/omega.dat");
+  for(int i=0;i<Nx;i++){
+    for(int j=0;j<Ny;j++){
+      for(int k=0;k<Nz;k++){
+        outputFileOmega <<i<<" "<<j<<" "<<k<<" "<<w[0][i][j][k]<<" "<<w[1][i][j][k]<<" "<<w[2][i][j][k]<<std::endl;
+      }
+    }
+  }
+  outputFileOmega.close();
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 }
