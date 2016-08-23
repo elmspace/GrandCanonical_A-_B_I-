@@ -37,16 +37,16 @@ int RunTimePrint= 1;
 
 // Setting Parameters
 // Degree of polymerization
-double NA = 1000;
+double NA = 100;
 double NB = NA;
 double NI = 1;
 
 // Charge fraction value [0..1]
-double PA = 0.00001;
+double PA = 0;//.00001;
 
 // Average phis
 double pAave = 0.5;
-double pBave = 0.5;
+double pBave = 1-pAave;
 double pIave = pAave*PA;
 
 // Relative chain length
@@ -68,7 +68,7 @@ double tau = 456.0; //Using T=300K, b=1nm, tau=700 almost exactly
 double epsilon = 1.0;
 
 // Flory-Higgins parameter
-double xAB = 10.0;
+double xAB = 3.1;
 double xAI = 0.0;
 double xBI = 0.0;
 

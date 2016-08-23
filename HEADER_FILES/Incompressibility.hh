@@ -26,5 +26,7 @@ void Incompressibility( ){
       }
     }
   }
-  
+  phi_average[0]/=double(Nx*Ny*Nz);
+  phi_average[1]/=double(Nx*Ny*Nz);
+  phi_average[2]/=double(Nx*Ny*Nz);
 }

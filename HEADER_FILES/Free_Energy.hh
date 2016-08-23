@@ -56,12 +56,12 @@ void FreeEnergy( ){
       // Calculating the contribution to the free energy from electrostatics
       fE_charge=0.0;
       for(int i=0;i<Nx;i++){
-	for(int j=0;j<Ny;j++){
-	  for(int k=0;k<Nz;k++){
-	    fE_charge -= ((12.0*Pi*epsilon)/tau)*(pow(Gradient_V_x[i][j][k],2)+pow(Gradient_V_y[i][j][k],2)+pow(Gradient_V_z[i][j][k],2))*(dxyz[0]*dxyz[1]*dxyz[2]);
-	    fE_charge += (NA*phi_e[i][j][k]*V[i][j][k])*(dxyz[0]*dxyz[1]*dxyz[2]);
-	  }
-	}
+      	for(int j=0;j<Ny;j++){
+      	  for(int k=0;k<Nz;k++){
+	         fE_charge -= ((12.0*Pi*epsilon)/tau)*(pow(Gradient_V_x[i][j][k],2)+pow(Gradient_V_y[i][j][k],2)+pow(Gradient_V_z[i][j][k],2))*(dxyz[0]*dxyz[1]*dxyz[2]);
+	         fE_charge += (NA*phi_e[i][j][k]*V[i][j][k])*(dxyz[0]*dxyz[1]*dxyz[2]);
+	        }
+	      }
       }
       fE_charge/=((Nx*dxyz[0])*(Ny*dxyz[1])*(Nz*dxyz[2]));
       
@@ -69,22 +69,22 @@ void FreeEnergy( ){
       
       // Calculaing the new omega fields and other contributions to the free energy
       for(int i=0;i<Nx;i++){
-	for(int j=0;j<Ny;j++){
-	  for(int k=0;k<Nz;k++){
-	    for(int ii=0;ii<ChainType;ii++){
-	      newW[ii][i][j][k] = 0.0;  
-	      for(int jj=0;jj<ChainType;jj++){
-		newW[ii][i][j][k] += ((chiMatrix[ii][jj]*phi[jj][i][j][k]));
-		fEchi += phi[ii][i][j][k]*chiMatrix[ii][jj]*phi[jj][i][j][k]*dxyz[0]*dxyz[1]*dxyz[2];
+      	for(int j=0;j<Ny;j++){
+	        for(int k=0;k<Nz;k++){
+	          for(int ii=0;ii<ChainType;ii++){
+	            newW[ii][i][j][k] = 0.0;  
+	            for(int jj=0;jj<ChainType;jj++){
+		            newW[ii][i][j][k] += ((chiMatrix[ii][jj]*phi[jj][i][j][k]));
+             		fEchi += phi[ii][i][j][k]*chiMatrix[ii][jj]*phi[jj][i][j][k]*dxyz[0]*dxyz[1]*dxyz[2];
+	            }
+	            newW[ii][i][j][k] += eta[i][j][k];
+	            fEW += (newW[ii][i][j][k]*phi[ii][i][j][k]*dxyz[0]*dxyz[1]*dxyz[2]);
+	            delW[ii][i][j][k] = newW[ii][i][j][k]-w[ii][i][j][k];
+	            deltaW += fabs(delW[ii][i][j][k]);
+	          }
+	          w_e[i][j][k] = NA*V[i][j][k] + etaHat; // Also includes the contribution from charge neutrality 
+	        }
 	      }
-	      newW[ii][i][j][k] += eta[i][j][k];
-	      fEW += (newW[ii][i][j][k]*phi[ii][i][j][k]*dxyz[0]*dxyz[1]*dxyz[2]);
-	      delW[ii][i][j][k] = newW[ii][i][j][k]-w[ii][i][j][k];
-	      deltaW += fabs(delW[ii][i][j][k]);
-	    }
-	    w_e[i][j][k] = NA*V[i][j][k] + etaHat; // Also includes the contribution from charge neutrality 
-	  }
-	}
       }
       fES=exp(muA)*QA + exp(kappaB*muB)*QB + exp(kappaI*muI)*QI;
       
@@ -119,6 +119,7 @@ void FreeEnergy( ){
       	saveData();
       }
       
+      oldfE=currentfE;
       iter++;
     }while(deltaW>precision);
     
