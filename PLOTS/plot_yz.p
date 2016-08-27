@@ -19,5 +19,5 @@ set view map
 set autoscale
 set size square
 
-   splot path."phi_yz.dat" using 1:2:($3)
+   splot path."phi_yz"."2.1".".dat" using 1:2:($3)
 pause(-1)

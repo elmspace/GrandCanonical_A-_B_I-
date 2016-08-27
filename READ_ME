@@ -1,8 +1,0 @@
-Particularly notable changes: 
-
-Total volume fraction now includes volume fraction of ions, this is visible in incomp conditionand initial determination of  phi_B.
-
-Added print outs of 1D data along each axis and 2D data along each plane.
-
-Added command `clean` to Makefile, so one may type `make clean` to remove those pesky `*~` files and `*.o` files
-
