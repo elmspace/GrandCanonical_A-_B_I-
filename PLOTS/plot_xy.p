@@ -19,5 +19,9 @@ set view map
 set autoscale
 set size square
 
-   splot path."phi_xy"."2.1".".dat" using 1:2:($3)
-pause(-1)
+chi=system("echo $chi")
+
+set title chi
+
+   splot path."phi_xy".chi.".dat" using 1:2:($3)
+#pause(-1)
