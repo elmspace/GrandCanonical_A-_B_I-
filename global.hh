@@ -59,7 +59,7 @@ double kappaI = NI/NA;
 
 // Chemical potentials
 double muA = 0.0;
-double muB = -0.6;
+double muB = 2.0;
 double muI = 0.0;
 
 // Total charge in system
@@ -72,7 +72,7 @@ double tau = 456.0; //Using T=300K, b=1nm, tau=700 almost exactly
 double epsilon = 1.0;
 
 // Flory-Higgins parameter
-double xAB = 1.0;
+double xAB = 0.0;
 double xAI = 0.0;
 double xBI = 0.0;
 
@@ -85,8 +85,8 @@ double Ly = 4.0;
 double Lz = 4.0;
 
 // Mixing parameters
-double epsilon_w = 0.01;
-double epsilon_p = 0.01;
+double epsilon_w = 0.05;
+double epsilon_p = 0.05;
 
 // Calculation percision
 double precision=1.0e-3;
