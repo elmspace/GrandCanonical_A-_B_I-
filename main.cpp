@@ -37,8 +37,13 @@ int main(int argc, char *argv[]){
   }
   else{
     xAB=atof(argv[1]);
+<<<<<<< HEAD
     string_chi=SSTR(xAB);
     Mod1();
+=======
+	string_chi=SSTR(xAB);
+	Mod1();
+>>>>>>> 1c6a46474c55946dbe9283cdec8493cf99889a59
   }
   
   return 0;
