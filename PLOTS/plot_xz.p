@@ -18,9 +18,9 @@ set hidden3d
 set view map 
 set autoscale
 set size square
-chi=system("echo $chi")
+PA=system("echo $PA")
 
-set title chi
+set title PA
 
-   splot path."phi_xz".chi.".dat" using 1:2:($3)
+   splot path."phi_xz".PA.".dat" using 1:2:($3)
 #pause(-1)

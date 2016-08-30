@@ -126,7 +126,7 @@ void FreeEnergy( ){
     
     
     outputFile <<dxyz[0]*Nx<<" "<<dxyz[1]*Ny<<" "<<dxyz[2]*Nz<<" "<<currentfE<<" "<<chi[4]<<std::endl;
-	outputFile2<< xAB <<" "<< phi_average[0] <<" "<< phi_average[1] <<" "<< muB <<" "<<muI<<std::endl;	
+	outputFile2<< PA<<" " <<xAB <<" "<< phi_average[0] <<" "<< phi_average[1] <<" "<< muB <<" "<<muI<<std::endl;	
 	
     
     if(Box_min==1){

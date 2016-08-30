@@ -32,18 +32,13 @@ using namespace std;
 
 int main(int argc, char *argv[]){
   if (argc!=2){
-    cout<<"usage: "<< argv[0] <<" <chi>"<<std::endl;
+    cout<<"usage: "<< argv[0] <<" <PA>"<<std::endl;
     return 1;
   }
   else{
-    xAB=atof(argv[1]);
-<<<<<<< HEAD
-    string_chi=SSTR(xAB);
+    PA=atof(argv[1]);
+    string_PA=SSTR(PA);
     Mod1();
-=======
-	string_chi=SSTR(xAB);
-	Mod1();
->>>>>>> 1c6a46474c55946dbe9283cdec8493cf99889a59
   }
   
   return 0;

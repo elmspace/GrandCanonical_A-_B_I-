@@ -46,7 +46,8 @@ double NB = NA;
 double NI = 1;
 
 // Charge fraction value [0..1]
-double PA = 1e-20;//0.000000001;//.00001;
+double PA = 0.000000001;//.00001;
+std::string string_PA=SSTR(PA);
 
 // Average phis
 double pAave = 0.5;
@@ -85,18 +86,8 @@ double Ly = 4.0;
 double Lz = 4.0;
 
 // Mixing parameters
-<<<<<<< HEAD
-<<<<<<< HEAD
-double epsilon_w = 0.05;
-double epsilon_p = 0.05;
-=======
 double epsilon_w = 0.01;
 double epsilon_p = 0.01;
->>>>>>> 94d89dd3a7adaa903a1a8ab2f436d7eba9aad647
-=======
-double epsilon_w = 0.05;
-double epsilon_p = 0.05;
->>>>>>> 1c6a46474c55946dbe9283cdec8493cf99889a59
 
 // Calculation percision
 double precision=1.0e-3;
