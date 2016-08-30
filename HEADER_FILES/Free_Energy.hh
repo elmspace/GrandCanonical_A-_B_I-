@@ -16,6 +16,7 @@ void FreeEnergy( ){
   msg=1;
   oldfE=1.0e2;
   std::ofstream outputFile("./RESULTS/fE.dat");
+  std::ofstream outputFile2("./RESULTS/avgphi.dat", std::fstream::app);
   do{
     
     // Calculate the homogenous free energy
@@ -124,8 +125,9 @@ void FreeEnergy( ){
     }while(deltaW>precision);
     
     
-    outputFile <<dxyz[0]*Nx<<" "<<dxyz[1]*Ny<<" "<<dxyz[2]*Nz<<" "<<currentfE<<" "<<chi[4]<<std::endl;     
-    
+    outputFile <<dxyz[0]*Nx<<" "<<dxyz[1]*Ny<<" "<<dxyz[2]*Nz<<" "<<currentfE<<" "<<chi[4]<<std::endl;
+	outputFile2<< xAB <<" "<< phi_average[0] <<" "<< phi_average[1] <<" "<< muB <<" "<<muI<<std::endl;	
+	
     
     if(Box_min==1){
       
@@ -146,6 +148,7 @@ void FreeEnergy( ){
   
   outputFile <<"Done"<<std::endl;
   outputFile.close();
+  outputFile2.close();
   saveData();
   
   

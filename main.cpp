@@ -30,9 +30,16 @@
 
 using namespace std;
 
-int main(){
-  
-  Mod1();
+int main(int argc, char *argv[]){
+  if (argc!=2){
+    cout<<"usage: "<< argv[0] <<" <chi>"<<std::endl;
+    return 1;
+  }
+  else{
+    xAB=atof(argv[1]);
+    string_chi=SSTR(xAB);
+    Mod1();
+  }
   
   return 0;
 }

@@ -46,7 +46,7 @@ double NB = NA;
 double NI = 1;
 
 // Charge fraction value [0..1]
-double PA = 1.0e-20;//.00001;
+double PA = 0.000000001;//.00001;
 
 // Average phis
 double pAave = 0.5;
@@ -59,14 +59,14 @@ double kappaI = NI/NA;
 
 // Chemical potentials
 double muA = 0.0;
-double muB = .2;
+double muB = 0.0;
 double muI = 0.0;
 
 // Total charge in system
 double Phi_e_total;
 
 // Look at theory pdf for this
-double tau = 456.0; //Using T=300K, b=1nm, tau=700 almost exactly 
+double tau = 456.0; //Using T=300K, b=1nm, tau=700 almost exactly, since tau scales like 1/T, tau=456~460K
 
 // Dielectric constant
 double epsilon = 1.0;
@@ -85,8 +85,8 @@ double Ly = 4.0;
 double Lz = 4.0;
 
 // Mixing parameters
-double epsilon_w = 0.001;
-double epsilon_p = 0.001;
+double epsilon_w = 0.05;
+double epsilon_p = 0.05;
 
 // Calculation percision
 double precision=1.0e-3;
