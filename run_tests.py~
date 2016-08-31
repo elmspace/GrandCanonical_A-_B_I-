@@ -1,9 +1,0 @@
-#!/usr/bin/python
-
-import os
-from os import system
-import sys
-
-PA_values = [0.00000000002, 0.0000000002,0.000000002,0.00000002,0.0000002,0.000002,0.00002,0.0002,0.002,0.02,0.2]
-for PA in PA_values:
-    system('nohup main ' + str(PA) + ' &> ' + str(PA) +'.out &')
