@@ -1,0 +1,14 @@
+Total charge: 124877
+etaHat: 124877
+0  fE: -5466.61  dfE: 5566.61  dW: 0.996377  dPhi(Nx/2)(Ny/2)(Nz/2): -0.221622 Phi A: 0.607509 Phi B: 0.606808 Phi I: 999.016
+Saving data . . .
+Total charge: -0.926747
+etaHat: 124876
+1  fE: -211632  dfE: 206166  dW: 1209.57  dPhi(Nx/2)(Ny/2)(Nz/2): -580.497 Phi A: 403.865 Phi B: 0.607235 Phi I: 0.0127793
+Total charge: -1.0468e+18
+etaHat: -1.0468e+18
+2  fE: -1.35534e+43  dfE: 1.35534e+43  dW: 5.02506e+20  dPhi(Nx/2)(Ny/2)(Nz/2): -5.11068e+14 Phi A: 1.67489e+20 Phi B: 0.000665905 Phi I: 2.98263e-15
+Total charge: -nan
+etaHat: -nan
+3  fE: nan  dfE: nan  dW: nan  dPhi(Nx/2)(Ny/2)(Nz/2): -nan Phi A: -nan Phi B: -nan Phi I: inf
+Saving data . . .

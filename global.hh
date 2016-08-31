@@ -60,7 +60,7 @@ double kappaI = NI/NA;
 
 // Chemical potentials
 double muA = 0.0;
-double muB = 2.0;
+double muB = 0.0;
 double muI = 0.0;
 
 // Total charge in system
