@@ -116,6 +116,7 @@ double ***eta;
 
 // Chanrge neutrality parameter
 double etaHat = 0.0;
+int charge_sign=0; 
 
 // Other parameters
 double *chi;

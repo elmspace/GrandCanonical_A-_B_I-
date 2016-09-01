@@ -1,0 +1,11 @@
+# Output files
+*.out
+
+# Debug files
+*.dSYM/
+
+# PHI output files
+./PHI/
+
+# RESULTS files
+./RESULTS/

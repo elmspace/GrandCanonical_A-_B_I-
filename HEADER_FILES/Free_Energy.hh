@@ -12,7 +12,6 @@ void FreeEnergy( ){
   double fEW, fEchi, fES, fE_charge; 
   double deltaW;
   double fE_homo;
-  
   msg=1;
   oldfE=1.0e2;
   std::ofstream outputFile("./RESULTS/fE.dat");
@@ -122,7 +121,7 @@ void FreeEnergy( ){
       
       oldfE=currentfE;
       iter++;
-    }while(deltaW>precision);
+    }while(deltaW>precision || iter<10000);
     
     
     outputFile <<dxyz[0]*Nx<<" "<<dxyz[1]*Ny<<" "<<dxyz[2]*Nz<<" "<<currentfE<<" "<<chi[4]<<std::endl;

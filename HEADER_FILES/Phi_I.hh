@@ -8,8 +8,8 @@ double Phi_I(double ****W){
 	for(int i=0;i<Nx;i++){
 		for(int j=0;j<Ny;j++){
 			for(int k=0;k<Nz;k++){
-				eff_wI[i][j][k] = W[2][i][j][k] + w_e[i][j][k];
-				qI[i][j][k] = exp(-eff_wI[i][j][k]/NA); //should N be here?
+  			eff_wI[i][j][k] = W[2][i][j][k] + w_e[i][j][k];
+  			qI[i][j][k] = exp(-eff_wI[i][j][k]/NA); //should N be here?
 			}
 		}
 	}

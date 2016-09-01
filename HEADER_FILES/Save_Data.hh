@@ -9,7 +9,7 @@ void saveData( ){
   
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (1D phi output in the x-direction)
-  std::ofstream outputFilex("./PHI/phi_x"+string_chi+".dat");
+  std::ofstream outputFilex("./PHI/phi_x"+string_PA+".dat");
   J=Ny/2;
   K=Nz/2;
   for(int i=0;i<Nx;i++){
@@ -20,7 +20,7 @@ void saveData( ){
   
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (1D phi output in the y-direction)
-  std::ofstream outputFiley("./PHI/phi_y"+string_chi+".dat");
+  std::ofstream outputFiley("./PHI/phi_y"+string_PA+".dat");
   I=Ny/2;
   K=Nz/2;
   for(int j=0;j<Ny;j++){
@@ -32,7 +32,7 @@ void saveData( ){
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (1D phi output in the z-direction)
-  std::ofstream outputFilez("./PHI/phi_z"+string_chi+".dat");
+  std::ofstream outputFilez("./PHI/phi_z"+string_PA+".dat");
   I=Nx/2;
   J=Ny/2;
   for(int k=0;k<Nz;k++){
@@ -43,7 +43,7 @@ void saveData( ){
   
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (2D phi out put, in the x-y plane)
-  std::ofstream outputFilexy("./PHI/phi_xy"+string_chi+".dat");
+  std::ofstream outputFilexy("./PHI/phi_xy"+string_PA+".dat");
   K=Nz/2;
   for(int i=0;i<Nx;i++){
     for(int j=0;j<Ny;j++){
@@ -55,7 +55,7 @@ void saveData( ){
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (2D phi out put, in the x-z plane)
-  std::ofstream outputFilexz("./PHI/phi_xz"+string_chi+".dat");
+  std::ofstream outputFilexz("./PHI/phi_xz"+string_PA+".dat");
   J=Ny/2;
   for(int i=0;i<Nx;i++){
     for(int k=0;k<Nz;k++){
@@ -67,7 +67,7 @@ void saveData( ){
  
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (2D phi out put, in the y-z plane)
-  std::ofstream outputFileyz("./PHI/phi_yz"+string_chi+".dat");
+  std::ofstream outputFileyz("./PHI/phi_yz"+string_PA+".dat");
   I=Nx/2;
   for(int j=0;j<Ny;j++){
     for(int k=0;k<Nz;k++){
@@ -77,7 +77,7 @@ void saveData( ){
   outputFileyz.close();
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (All of the phi matrix)
-  std::ofstream outputFileAllPhi("./PHI/allphi"+string_chi+".dat");
+  std::ofstream outputFileAllPhi("./PHI/allphi"+string_PA+".dat");
   for(int i=0;i<Nx;i++){
    for(int j=0;j<Ny;j++){
     for(int k=0;k<Nz;k++){
