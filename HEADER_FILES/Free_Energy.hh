@@ -16,11 +16,11 @@ void FreeEnergy( ){
   oldfE=1.0e2;
   std::ofstream outputFile("./RESULTS/fE.dat");
   std::ofstream outputFile2("./RESULTS/avgphi.dat", std::fstream::app);
+//  Read_Input(1,1,1,1,1,1,"1e-09");
   do{
     
     // Calculate the homogenous free energy
     //fE_homo=homogenousfE( );
-    
     Wave_Vectors(dxyz);
     currentfE=0.0;
     deltafE=0.0;
@@ -38,6 +38,8 @@ void FreeEnergy( ){
       Phi_e( );
       // Solving the PBE
       Solve_PB_Equation( );
+  //saveData();
+  //exit(1);
       // Calculating the incompressibility
       Incompressibility( );
       TotalCharge( );
@@ -121,7 +123,7 @@ void FreeEnergy( ){
       
       oldfE=currentfE;
       iter++;
-    }while(deltaW>precision || iter<10000);
+    }while(deltaW>precision || Phi_e_total>charge_threshold);
     
     
     outputFile <<dxyz[0]*Nx<<" "<<dxyz[1]*Ny<<" "<<dxyz[2]*Nz<<" "<<currentfE<<" "<<chi[4]<<std::endl;

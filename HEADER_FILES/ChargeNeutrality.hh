@@ -6,9 +6,8 @@ void ChargeNeutrality( ){
   int new_charge_sign=0;
   if(Phi_e_total>0) new_charge_sign=1;
   else if (Phi_e_total<0) new_charge_sign=-1;
-  if(charge_sign==new_charge_sign || etaHat>1e4){
-  //if(etaHat>0 && Phi_e_total<0)
-    correction_strength=etaHat*10+1;
+  if((charge_sign==new_charge_sign || etaHat>1e4)){
+    correction_strength=etaHat*100+1;
   }
   else{
     correction_strength=1;

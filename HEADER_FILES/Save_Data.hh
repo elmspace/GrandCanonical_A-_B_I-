@@ -9,7 +9,7 @@ void saveData( ){
   
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (1D phi output in the x-direction)
-  std::ofstream outputFilex("./PHI/phi_x"+string_PA+".dat");
+  std::ofstream outputFilex("./PHI/phi_x"+string_addon+".dat");
   J=Ny/2;
   K=Nz/2;
   for(int i=0;i<Nx;i++){
@@ -20,7 +20,7 @@ void saveData( ){
   
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (1D phi output in the y-direction)
-  std::ofstream outputFiley("./PHI/phi_y"+string_PA+".dat");
+  std::ofstream outputFiley("./PHI/phi_y"+string_addon+".dat");
   I=Ny/2;
   K=Nz/2;
   for(int j=0;j<Ny;j++){
@@ -32,7 +32,7 @@ void saveData( ){
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (1D phi output in the z-direction)
-  std::ofstream outputFilez("./PHI/phi_z"+string_PA+".dat");
+  std::ofstream outputFilez("./PHI/phi_z"+string_addon+".dat");
   I=Nx/2;
   J=Ny/2;
   for(int k=0;k<Nz;k++){
@@ -43,7 +43,7 @@ void saveData( ){
   
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (2D phi out put, in the x-y plane)
-  std::ofstream outputFilexy("./PHI/phi_xy"+string_PA+".dat");
+  std::ofstream outputFilexy("./PHI/phi_xy"+string_addon+".dat");
   K=Nz/2;
   for(int i=0;i<Nx;i++){
     for(int j=0;j<Ny;j++){
@@ -55,7 +55,7 @@ void saveData( ){
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (2D phi out put, in the x-z plane)
-  std::ofstream outputFilexz("./PHI/phi_xz"+string_PA+".dat");
+  std::ofstream outputFilexz("./PHI/phi_xz"+string_addon+".dat");
   J=Ny/2;
   for(int i=0;i<Nx;i++){
     for(int k=0;k<Nz;k++){
@@ -67,7 +67,7 @@ void saveData( ){
  
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (2D phi out put, in the y-z plane)
-  std::ofstream outputFileyz("./PHI/phi_yz"+string_PA+".dat");
+  std::ofstream outputFileyz("./PHI/phi_yz"+string_addon+".dat");
   I=Nx/2;
   for(int j=0;j<Ny;j++){
     for(int k=0;k<Nz;k++){
@@ -77,18 +77,18 @@ void saveData( ){
   outputFileyz.close();
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (All of the phi matrix)
-  std::ofstream outputFileAllPhi("./PHI/allphi"+string_PA+".dat");
+  std::ofstream outputFileAllPhi("./PHI/allphi"+string_addon+".dat");
   for(int i=0;i<Nx;i++){
    for(int j=0;j<Ny;j++){
     for(int k=0;k<Nz;k++){
-        outputFileAllPhi <<i<<" "<<j<<" "<<k<<" "<<phi[0][i][j][k]<<" "<<phi[1][i][j][k]<<" "<<phi[2][i][j][k]<<std::endl;
+        outputFileAllPhi <<i<<" "<<j<<" "<<k<<" "<<phi[0][i][j][k]<<" "<<phi[1][i][j][k]<<" "<<phi[2][i][j][k]<<" "<<phi_e[i][j][k]<<std::endl;
       }
     }
   }
   outputFileAllPhi.close();
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Writing to data files (All of the omega matrix)
-  std::ofstream outputFileOmega("./PHI/omega.dat");
+  std::ofstream outputFileOmega("./PHI/omega"+string_addon+".dat");
   for(int i=0;i<Nx;i++){
     for(int j=0;j<Ny;j++){
       for(int k=0;k<Nz;k++){
@@ -97,5 +97,42 @@ void saveData( ){
     }
   }
   outputFileOmega.close();
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  // Writing to data files (All of the eta matrix)
+  std::ofstream outputFileEta("./PHI/eta"+string_addon+".dat");
+  for(int i=0;i<Nx;i++){
+    for(int j=0;j<Ny;j++){
+      for(int k=0;k<Nz;k++){
+        outputFileEta <<i<<" "<<j<<" "<<k<<" "<<eta[i][j][k]<<std::endl;
+      }
+    }
+  }
+  outputFileEta.close();
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  // Writing to data files (All of the V matrix)
+  std::ofstream outputFileV("./PHI/V"+string_addon+".dat");
+  for(int i=0;i<Nx;i++){
+    for(int j=0;j<Ny;j++){
+      for(int k=0;k<Nz;k++){
+        outputFileV <<i<<" "<<j<<" "<<k<<" "<<V[i][j][k]<<std::endl;
+      }
+    }
+  }
+  outputFileV.close();
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  // Writing to data files (All of the w_e matrix)
+  std::ofstream outputFileOmega_e("./PHI/omega_e"+string_addon+".dat");
+  for(int i=0;i<Nx;i++){
+    for(int j=0;j<Ny;j++){
+      for(int k=0;k<Nz;k++){
+        outputFileOmega_e <<i<<" "<<j<<" "<<k<<" "<<w_e[i][j][k]<<std::endl;
+      }
+    }
+  }
+  outputFileOmega_e.close();
+  // Writing to data files (etaHat)
+  std::ofstream outputFileEtaHat("./PHI/etaHat"+string_addon+".dat");
+  outputFileEtaHat <<etaHat<<std::endl;
+  outputFileEtaHat.close();
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 }

@@ -4,6 +4,17 @@
 */
 void Parameters( ){
   
+  // Input from files
+  bool phi_in     = 0;
+  bool omega_in   = 0;
+  bool eta_in     = 0;
+  bool V_in       = 0;
+  bool omega_e_in = 0;
+  bool etaHat_in  = 0;
+
+  // What are the input file suffices based on?
+  std::string string_addon_in="1e-09";
+
   // Set to 1 to read from restart file
   // Set to 0 to set manually
   Iomega=0;
@@ -44,11 +55,13 @@ void Parameters( ){
   for(int i=0; i<Nx; i++){
     for(int j=0; j<Ny;j++){
       for(int k=0;k<Nz;k++){
-	phi[0][i][j][k]=pAave;
-	phi[1][i][j][k]=pBave;
-	phi[2][i][j][k]=pIave;
+	      phi[0][i][j][k]=pAave;
+      	phi[1][i][j][k]=pBave;
+      	phi[2][i][j][k]=pIave;
       }
     }
   }
-  
+  if(phi_in || omega_in || eta_in || V_in || omega_e_in || etaHat_in){
+    Read_Input(phi_in, omega_in, eta_in, V_in, omega_e_in, etaHat_in, string_addon);
+  }
 }
