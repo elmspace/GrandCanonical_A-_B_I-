@@ -7,6 +7,7 @@
 #include "./HEADER_FILES/Allocate.hh"  
 #include "./HEADER_FILES/Read_Input.hh"
 #include "./HEADER_FILES/Parameters.hh"
+#include "./HEADER_FILES/Save_Data.hh"
 #include "./HEADER_FILES/Wave_Vectors.hh"
 #include "./HEADER_FILES/Omega.hh"
 #include "./HEADER_FILES/Solve_Diffusion_Equation.hh"
@@ -20,7 +21,6 @@
 #include "./HEADER_FILES/Box_Minimization_Free_Energy.hh"
 #include "./HEADER_FILES/Box_Minimization.hh"
 #include "./HEADER_FILES/Gradient.hh"
-#include "./HEADER_FILES/Save_Data.hh"
 #include "./HEADER_FILES/ChargeNeutrality.hh"
 #include "./HEADER_FILES/TotalCharge.hh"
 #include "./HEADER_FILES/Free_Energy.hh"
@@ -37,8 +37,9 @@ int main(int argc, char *argv[]){
     return 1;
   }
   else{
-    PA=atof(argv[1]);
-    string_PA=SSTR(PA);
+    muB=atof(argv[1]);
+    string_muB=SSTR(muB);
+    string_addon=string_chi+"."+string_muB;
     Mod1();
   }
   

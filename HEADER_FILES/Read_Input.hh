@@ -87,6 +87,7 @@ void Read_Input(bool phi_in, bool omega_in, bool eta_in, bool V_in, bool Omega_e
         }
       }
     }
+  }
 
     else{
       std::cerr << "w_e input file invalid."<<std::endl;

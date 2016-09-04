@@ -18,7 +18,9 @@
 #include <math.h>     
 #include <string>
 #include <sstream>
-#include <time.h>      
+#include <time.h>
+#include <ios>
+#include <iomanip>
 
 #define SSTR( x ) static_cast< std::ostringstream & >( \
             ( std::ostringstream() << std::dec << x ) ).str()
@@ -46,7 +48,7 @@ double NB = NA;
 double NI = 1;
 
 // Charge fraction value [0..1]
-double PA = 0.000000001;//.00001;
+double PA = 1e-20;//.00001;
 std::string string_PA=SSTR(PA);
 
 // Average phis
@@ -62,22 +64,24 @@ double kappaI = NI/NA;
 double muA = 0.0;
 double muB = 0.0;
 double muI = 0.0;
+std::string string_muB=SSTR(muB);
 
 // Total charge in system
 double Phi_e_total;
 
 // Look at theory pdf for this
-double tau = 456.0; //Using T=300K, b=1nm, tau=700 almost exactly, since tau scales like 1/T, tau=456~460K
+double tau = 700.0; //Using T=300K, b=1nm, tau=700 almost exactly, since tau scales like 1/T, tau=456~460K
 
 // Dielectric constant
 double epsilon = 1.0;
 
 // Flory-Higgins parameter
-double xAB = 0.0;
+double xAB = 2.0;
 double xAI = 0.0;
 double xBI = 0.0;
 
 std::string string_chi=SSTR(xAB);
+std::string string_addon=string_PA;
 
 
 // Box size
@@ -91,6 +95,7 @@ double epsilon_p = 0.01;
 
 // Calculation percision
 double precision=1.0e-3;
+double charge_threshold=1e-16;
 
 // Box minimization step sizes
 double del_Box=0.1;
@@ -116,7 +121,8 @@ double ***eta;
 
 // Chanrge neutrality parameter
 double etaHat = 0.0;
-int charge_sign=0; 
+int charge_sign=0;
+double old_Phi_e_total=0.0;
 
 // Other parameters
 double *chi;
@@ -157,5 +163,5 @@ fftw_complex *input_q, *transformed_q, *final_q;
 fftw_plan forward_plan_PB,inverse_plan_PB;
 fftw_complex *input_PB, *transformed_PB, *final_PB;
 
-
+int iter;
 

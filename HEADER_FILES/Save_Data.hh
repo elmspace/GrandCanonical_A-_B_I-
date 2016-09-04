@@ -5,6 +5,8 @@
 void saveData( ){
 
   int I, J, K;
+  std::streamsize initial_precision= std::cout.precision();
+  std::cout.precision(17);
   std::cout<<"Saving data . . ."<<std::endl;
   
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -135,4 +137,5 @@ void saveData( ){
   outputFileEtaHat <<etaHat<<std::endl;
   outputFileEtaHat.close();
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  std::cout.precision(initial_precision);
 }

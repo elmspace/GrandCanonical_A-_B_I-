@@ -30,7 +30,6 @@ double Phi_A(double ****W){
 	// Normalizing with respect to the volume of the box
 	Q/=Nx*Ny*Nz;
   
-  
 	// Here we do the concentration calculation
 	for(int i=0;i<Nx;i++){
 		for(int j=0;j<Ny;j++){

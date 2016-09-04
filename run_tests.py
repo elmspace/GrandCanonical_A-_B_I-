@@ -4,6 +4,6 @@ import os
 from os import system
 import sys
 
-PA_values = [0.00000000005, 0.0000000005,0.000000005,0.00000005,0.0000005,0.000005,0.00005,0.0005,0.005,0.05,0.5]
-for PA in PA_values:
-    system('nohup main ' + str(PA) + ' &> ' + str(PA) +'.out &')
+muB_values = [-2.0, -1.8,-1.6,-1.4,-1.2,-1.0,-0.9,-0.8,-0.7,-0.6,-0.5,-0.4,-0.3,-0.2,-0.1,0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0,1.2,1.4,1.6,1.8,2.0]
+for muB in muB_values:
+    system('nohup main ' + str(muB) + ' &> ' + str(muB) +'.out &')
