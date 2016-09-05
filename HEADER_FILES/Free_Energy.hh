@@ -15,7 +15,7 @@ void FreeEnergy( ){
   oldfE=1.0e2;
   std::ofstream outputFile("./RESULTS/fE.dat");
   std::ofstream outputFile2("./RESULTS/avgphi.dat", std::fstream::app);
-  Read_Input(1,1,1,1,1,1,"1e-105");
+  Read_Input(1,1,1,1,1,1,"1.5.0");
   do{
     
     // Calculate the homogenous free energy

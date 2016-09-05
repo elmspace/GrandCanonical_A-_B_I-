@@ -76,7 +76,7 @@ double tau = 700.0; //Using T=300K, b=1nm, tau=700 almost exactly, since tau sca
 double epsilon = 1.0;
 
 // Flory-Higgins parameter
-double xAB = 2.0;
+double xAB = 2.5;
 double xAI = 0.0;
 double xBI = 0.0;
 
@@ -95,7 +95,7 @@ double epsilon_p = 0.01;
 
 // Calculation percision
 double precision=1.0e-3;
-double charge_threshold=1e-16;
+double charge_threshold=1e-23;
 
 // Box minimization step sizes
 double del_Box=0.1;

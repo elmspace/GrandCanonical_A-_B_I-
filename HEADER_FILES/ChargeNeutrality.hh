@@ -9,12 +9,12 @@ void ChargeNeutrality( ){
   else if (Phi_e_total<0) new_charge_sign=-1;
 
   if(charge_sign==new_charge_sign && iter>4){
-    if(fabs(old_Phi_e_total)>fabs(Phi_e_total)){
-      correction_strength=etaHat*1000+1;
+    if(fabs(old_Phi_e_total)>=fabs(Phi_e_total)){
+      correction_strength=etaHat*1e13+1;
     }
   }
   else{
-    correction_strength=1;
+    correction_strength=1e15;
   }
   while(fabs(correction_strength*Phi_e_total)>fabs(etaHat/5.)){
     correction_strength/=10;
