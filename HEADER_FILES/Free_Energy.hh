@@ -9,13 +9,13 @@ void FreeEnergy( ){
   double currentfE, oldfE, deltafE; 
   double QA,QB,QI; 
   double fEW, fEchi, fES, fE_charge; 
-  double deltaW;
+  double deltaW=0.0;
   double fE_homo;
   msg=1;
   oldfE=1.0e2;
   std::ofstream outputFile("./RESULTS/fE.dat");
   std::ofstream outputFile2("./RESULTS/avgphi.dat", std::fstream::app);
-  Read_Input(1,1,1,1,1,1,"1.5.0");
+  Read_Input(1,1,1,1,1,1,"2.5."+string_muB+"."+string_PA);
   do{
     
     // Calculate the homogenous free energy
@@ -40,7 +40,7 @@ void FreeEnergy( ){
       // Calculating the incompressibility
       Incompressibility( );
       TotalCharge( );
-      ChargeNeutrality( );
+      ChargeNeutrality(deltaW );
       
       fEW=0.0;
       fEchi=0.0;

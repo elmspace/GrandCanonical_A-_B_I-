@@ -32,14 +32,16 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-  if (argc!=2){
-    cout<<"usage: "<< argv[0] <<" <PA>"<<std::endl;
+  if (argc!=3){
+    cout<<"usage: "<< argv[0] <<" <muB> <chi_AB>"<<std::endl;
     return 1;
   }
   else{
     muB=atof(argv[1]);
+    xAB=atof(argv[2]);
     string_muB=SSTR(muB);
-    string_addon=string_chi+"."+string_muB;
+    string_chi=SSTR(xAB);
+    string_addon=string_chi+"."+string_muB+"."+string_PA;
     Mod1();
   }
   

@@ -76,7 +76,7 @@ double tau = 700.0; //Using T=300K, b=1nm, tau=700 almost exactly, since tau sca
 double epsilon = 1.0;
 
 // Flory-Higgins parameter
-double xAB = 2.5;
+double xAB = 2.6;
 double xAI = 0.0;
 double xBI = 0.0;
 
@@ -90,12 +90,12 @@ double Ly = 4.0;
 double Lz = 4.0;
 
 // Mixing parameters
-double epsilon_w = 0.01;
-double epsilon_p = 0.01;
+double epsilon_w = 0.1;
+double epsilon_p = 0.1;
 
 // Calculation percision
 double precision=1.0e-3;
-double charge_threshold=1e-23;
+double charge_threshold=1e-25;
 
 // Box minimization step sizes
 double del_Box=0.1;
@@ -123,6 +123,9 @@ double ***eta;
 double etaHat = 0.0;
 int charge_sign=0;
 double old_Phi_e_total=0.0;
+int number_of_reductions=10;
+int repeated_same_sign = 0;
+int max_number_of_reductions=10000;
 
 // Other parameters
 double *chi;
